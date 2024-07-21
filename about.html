@@ -1,55 +1,296 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<title>aaaa協会概要</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 2nd RIKEN AIP – SJTU CS Joint Workshop on Machine Learning and Brain-like Intelligence</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Buenard, serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            text-align: center;
+            padding: 70px 0 60px 0;
+            background-color: #183570;
+            color: white;
+            width: 100%;
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0 10px 0;
+            background-color: #183570;
+            color: white;
+            width: 100%;
+            bottom: 0;
+        }
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2em;
+        }
+        h3 {
+            text-align: left;
+            font-size: 2em;
+            font-weight: bold;
+            color: #183570;
+        }
+        h4 {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        main {
+            padding: 50px 10%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #1E5799;
+            color: white;
+            font-weight: bold;
+        }
+        .talk-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .talk-title {
+            text-align: center;
+            width: 100%;
+            font-style: italic;
+        }
+        .midfield-title {
+            text-align: center;
+            color: #3467A1;
+            width: 100%;
+            padding-left: 1em;
+        }
+        .speaker {
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+            padding-bottom: 0.3em;
+        }
+        .divider {
+            width: 20%;
+            margin: 0.3em 0 0.5em 0;
+            border-top: 8px solid #183570;
+        }
+        .list-module {
+            margin: 20px 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .list-module ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .list-module li {
+            margin: 15px 0;
+        }
+        .list-module li .presenter {
+            font-weight: bold;
+        }
+        .list-module li .title {
+            margin-top: 5px;
+            padding-left: 1em;
+        }
+        .download-link {
+            font-size: 1em;
+            margin-top: 15px;
+            color: #608ACD; /*  */
+            text-decoration: none; /*  */
+        }
+
+        /*  */
+        .download-link:hover {
+            color: #183570; /*  */
+            text-decoration: underline; /*  */
+        }
+
+        /*  */
+        .download-link:visited {
+            color: purple; /*  */
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1450px) {
+            .divider {
+                width: 22%;
+            }
+        }
+        @media (max-width: 1200px) {
+            main {
+                padding: 40px 8%;
+            }
+            header {
+                padding: 60px 0 40px 0;
+            }
+            h1 {
+                font-size: 1.8em;
+                font-weight: normal;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.8em;
+            }
+            h4 {
+            font-size: 1.2em;
+            }
+            th, td {
+                padding: 12px;
+            }
+            .divider {
+                width: 23%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 30px 5%;
+            }
+            header {
+                padding: 50px 0 30px 0;
+            }
+            h1 {
+                font-size: 1.6em;
+                font-weight: normal;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            h4 {
+            font-size: 1.1em;
+            }
+            th, td {
+                padding: 10px;
+            }
+            .divider {
+                width: 30%;
+            }
+            .download-link {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 20px 3%;
+            }
+            header {
+                padding: 40px 0 20px 0;
+            }
+            h1 {
+                font-size: 1.0em;
+                font-weight: normal;
+            }
+            h2 {
+                font-size: 1.0em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            h4 {
+                font-size: 0.9em;
+            }
+            th, td {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+            .divider {
+                width: 45%;
+            }
+            .talk-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .talk-title, .midfield-title, .speaker {
+                text-align: left;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .download-link {
+                font-size: 0.8em;
+            }
+        }
+    </style>
 </head>
 <body>
-<div id="wrapper">
-<header>
-<div class="title">
-<img src="images/logo.jpg" alt="logo">
-<h1>bbbb特定非営利活動法人インターネットスキル認定普及協会</h1>	
-<form id="sitesearch" action="" method="get">
-<input type="text" name="keyword" placeholder="サイト検索">
-<input type="submit" value="送信">
-</form>
-</div>
-<nav>
-<ul>
-<li class="current"><a href="index.html">ホーム</a></li>
-<li><a href="#">新着情報</a></li>
-<li><a href="about.html">協会概要</a></li>
-<li class="long"><a href="seminar.html">セミナー一覧</a></li>
-<li><a href="#">サイトマップ</a></li>
-</ul>	
-</nav>
-</header>
-<main>
-<img src="images/eyecatch1.jpg" width="960px" height="100px" alt="anime">
-<div class="home">
-<div id="info">
-<h2>cccc組織情報</h2>
-<dt><strong>商号:</strong></dt><dd>特定非営利活動法人 ウェブデザイン技能競技協会</dd><br />
-<dt><strong>英字表記:</strong></dt><dd>Association for Web Design Competition</dd><br />
-<dt><strong>住所:</strong></dt><dd>〒160-0023 東京都新宿区西新宿 2-X-Y 新宿アイランドタワーウェスト 45 F</dd><br />
-<dt><strong>電話(代表)</strong></dt><dd>03-XYZX-LMNO</dd><br />
-<dt><strong>FAX:</strong></dt><dd>03-XYZX-LMNO</dd><br />
-<dt><strong>Email:</strong></dt><dd>info@wdsp.com</dd><br />
-</div>
-<div id="privacy">
-<h2>プライバシーポリシー</h2>
-<p>当協会では、ウェブデザインスキルウェブサイト（以下「当サイト」という。）において提供するサービス（ウェブサイトによる情報提供、 各種ご意見・ご感想の受付等）の円滑な運営に必要な範囲で、 当サイトを利用される皆様の情報を収集しています。収集した情報は利用目的の範囲内で適切に取り扱います。</p>
-<br />
-</div>
-	
-</div>	
-</main>
-<footer>
-<a href="about.html#info">協会概要</a> | <a href="about.html#privacy">プライバシーポリシー</a>
-<p><small>Copywrite 2021 ANSCP All rights reserved.</small></p>
-</footer>	
-</div>
+    <header>
+        <h2>Billboard Hot 100</h2>
+        <h1>1983/07/09</h1>
+    </header>
+    <main>
+        <h3>Ranking</h3>
+        <div class="divider"></div>
+<!--        <a href="RIKEN-SJTU-WorkshopProgram.pdf" class="download-link"><b>Download schedule as a PDF</b></a>-->
+        <h4>July 9, 1983</h4>
+        <table>
+            <tr>
+                <th>Ranking</th>
+                <th>Tittle</th>
+                <th>name</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <div class="talk-details">
+                        <div class="talk-title" style="font-style:normal;">Every Breath You Take</div>
+                    </div>
+                </td>
+                <td>The Police</td>
+            </tr>
+            <tr>
+                <td>9:40 – 9:50</td>
+                <td>
+                    <div class="talk-details">
+                        <div class="talk-title"><a style="font-style: normal;">Electric Avenue</b></a></div>
+                        <div class="talk-title"></div>
+                    </div>
+                </td>
+                <td rowspan="3">Eddy Grant</td>
+            </tr>
+            <tr>
+
+
+    </main>
+    <br><br><br><br><br><br>
+    <footer>
+        <p style="color:#778899">Copyrights &copy; 2024 TLT. All rights reserved.</p>
+    </footer>
 </body>
 </html>
